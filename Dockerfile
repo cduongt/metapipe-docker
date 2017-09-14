@@ -1,10 +1,9 @@
 FROM golang:alpine
-RUN apk add --update git bash openssh
+RUN apk add --update git bash openssh make
 WORKDIR $GOPATH/src/github.com/hashicorp/terraform
 ENV TF_DEV=true
 RUN git clone https://github.com/cduongt/terraform.git ./ && \
-    /bin/bash scripts/build.sh
-RUN ls $GOPATH/bin
+    make dev
 
 FROM centos:6
 WORKDIR /docker-metapipe
