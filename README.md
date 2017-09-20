@@ -35,8 +35,9 @@ users:
       - ssh-rsa
 MIIBCgKCAQEA+xGZ/wcz9ugFpP07Nspo6U17l0YhFiFpxxU4pTk3Lifz9R3zsIsuERwta7+fWIfxOo208ett/jhskiVodSEt3QBGh4XBipyWopKwZ93HHaDVZAALi/2A+xTBtWdEo7XGUujKDvC2/aZKukfjpOiUI8AhLAfjmlcD/UZ1QPh0mHsglRNCmpCwmwSXA9VNmhz+PiB+Dml4WWnKW/VHo2ujTXxq7+efMU4H2fny3Se3KYOsFPFGZ1TNQSYlFuShWrHPtiLmUdPoP6CV2mML1tk+l7DIIqXrQhLUKDACeM5roMx0kLhUWB8P+0uj1CNlNN4JRZlC7xFfqiMbFRU9Z4N6YwIDAQAB cloud-user
 ```
-```id_rsa``` - Private key which is paired with public key in context file, must be unlocked (without password)
-```mmg-cluster.tf``` - Terraform configuration file
+```id_rsa``` - Private key which is paired with public key in context file, must be unlocked (without password)  
+```mmg-cluster.tf``` - Terraform configuration file  
+
 Sample config:
 ```
 resource "occi_virtual_machine" "master" {
@@ -96,7 +97,7 @@ output "proxy_file" {
 	value = "${occi_virtual_machine.master.x509}"
 }
 ```
-```usercert.pem``` and ```userkey.pem``` - Credential files needed to generate proxy file for accessing EGI resources
+```usercert.pem``` and ```userkey.pem``` - Credential files needed to generate proxy file for accessing EGI resources  
 ```elixirx509``` - Proxy file generated for [ELIXIR VO](https://wiki.egi.eu/wiki/ELIXIR_Virtual_Organisation)
 
 Your directory should look like this:
